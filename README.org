@@ -1,0 +1,25 @@
+* netraf_pulse: Show your network traffic via P*U*L*S*E of keyboard LEDs
+
+[[./demo/demo.gif]]
+
+** Introduction
+
+This is a toy utility which could show your network traffic via pulse of
+keyboard LEDs, run it with a name of network interface as command line argument
+to make your LEDs go to work, flashing in time with the flow of network packets
+to and from that network interface.
+
+** Usage
+
+This utility should run in *root* privilege, you can type =sudo ./netraf_pulse
+iface= to get it work. Certainly you should use the name of network interface
+you want to monitor to replace that "iface", for example, eth0.
+
+The blinking speed of CapsLock LED and ScrollLock LED indicates incoming and
+outgoing network traffic, NumLock LED would also be brought up if the overall
+(recv + transmit) network packet flow is above a certain threshold (100 KB/s).
+
+** Note
+
+The idea of this utility is inspired by FLOYD, which could blink PC keyboard
+LED with an interval which varies depending upon the system's load average.
