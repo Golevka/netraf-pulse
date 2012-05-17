@@ -1,6 +1,6 @@
 * netraf_pulse: Show your network traffic via P*U*L*S*E of keyboard LEDs
 
-[[./demo/demo.gif]]
+[[https://github.com/Golevka/netraf-pulse/raw/master/demo/demo.gif]]
 
 ** Introduction
 
