@@ -5,7 +5,7 @@
 ** Introduction
 
 This is a toy utility which could show your network traffic via pulse of
-keyboard LEDs, run it with a name of network interface as command line argument
+keyboard LEDs, run it with a network interface name as command line argument
 to make your LEDs go to work, flashing in time with the flow of network packets
 to and from that network interface.
 
