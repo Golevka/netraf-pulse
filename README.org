@@ -1,4 +1,4 @@
-* netraf_pulse: Show your network traffic via P*U*L*S*E of keyboard LEDs
+* netraf-pulse: Show your network traffic via P*U*L*S*E of keyboard LEDs
 
 [[https://github.com/Golevka/netraf-pulse/raw/master/demo/demo.gif]]
 
@@ -11,7 +11,7 @@ to and from that network interface.
 
 ** Usage
 
-This utility should run in *root* privilege, you can type =sudo ./netraf_pulse
+This utility should run under *root* privilege, you can type =sudo ./netraf_pulse
 iface= to get it work. Certainly you should use the name of network interface
 you want to monitor to replace that "iface", for example, eth0.
 
