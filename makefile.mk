@@ -1,7 +1,6 @@
 # INCLUDE_PATH, SOURCE_PATH, DEPENDENCY_PATH, OBJECT_PATH, EXTERNAL_LIBS and
 # PROGRAM_NAME should be defined in custom makefile
 
-
 vpath %.h $(INCLUDE_PATH)
 vpath %.c $(SOURCE_PATH)
 vpath %.d $(DEPENDENCY_PATH)
@@ -43,6 +42,7 @@ $(PROGRAM_NAME): $(object-list)
 
 
 $(OBJECT_PATH)/%.o: %.c
+	@mkdir -p $(OBJECT_PATH)
 	$(COMPILE.c) $(OUTPUT_OPTION) $<
 
 
@@ -50,11 +50,12 @@ $(OBJECT_PATH)/%.o: %.c
 -include $(dependency-list)
 
 $(DEPENDENCY_PATH)/%.d: %.c
-	$(CC) -M $(CFLAGS) $< > $@.$$$$;			\
+	@mkdir -p $(DEPENDENCY_PATH)
+	@$(CC) -M $(CFLAGS) $< > $@.$$$$;			\
 	sed 's,\($*\)\.o[ :]*,\1.o $@ : ,g' < $@.$$$$ > $@;	\
 	rm -f $@.$$$$
 
 
 .PHONY: clean build
 clean:
-	rm $(object-list) $(dependency-list)
+	rm -f $(object-list) $(dependency-list)
